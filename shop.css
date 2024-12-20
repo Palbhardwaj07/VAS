@@ -1,0 +1,733 @@
+*{
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  font-family: 'jost','sans-serif';
+
+  list-style: none;
+
+  text-decoration: none;
+
+}
+
+
+
+body{
+
+  background: #0f0f0f;
+
+  color: #fff;
+
+}
+
+
+
+
+
+header{
+
+  position: fixed;
+
+  width: 100%;
+
+  top: 0;
+
+  right: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 10%;
+
+}
+
+
+
+.container{
+
+  width: 100%;
+
+  height: 60px;
+
+  padding: 10px 10%;
+
+  background-color: black;
+
+  position: fixed;
+
+  z-index: 1;
+
+}
+
+
+
+nav{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  position: fixed;
+
+  z-index: 1;
+
+  background-color: black;
+
+  }
+
+  .logo{
+
+      width: 140px;
+
+      height: 20px;
+
+      
+
+  }
+
+  
+
+
+
+  nav ul li{
+
+      display: inline-block;
+
+      list-style: none;
+
+      margin: 10px 20px;
+
+  }
+
+ 
+
+  
+
+  nav ul li a{
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-size: 18px;
+
+      position: relative;
+
+  }
+
+  
+
+  nav ul li a::after{
+
+      content: '';
+
+      width: 0%;
+
+      height: 3px;
+
+      background: #ff004f;
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -6px;
+
+      transition: 0.5s;
+
+  
+
+  }
+
+  
+
+  nav ul li a:hover::after{
+
+      width: 100%;
+
+  }
+
+  .header-text{
+
+      margin-top: 20%;
+
+      font-size: 30px;
+
+  }
+
+  
+
+  .header-text h1{
+
+      font-size: 60px;
+
+      margin-top: 20px;
+
+  }
+
+  
+
+  .header-text h1 span{
+
+      color:#ff004f ;
+
+  }
+
+  
+
+  /* ------container2--------- */
+
+  .container2{
+
+     
+
+      border: #ff004f;
+
+     
+
+      height: fit-content;
+
+      background-color: white;
+
+      overflow: hidden;
+
+  }
+
+
+
+  .slider{
+
+      width: 1300px;
+
+      max-width: 100vw;
+
+      height: 500px;
+
+      margin: auto;
+
+      position: relative;
+
+      overflow: hidden;
+
+  }
+
+  .slider .list{
+
+      position: absolute;
+
+      width: max-content;
+
+      height: 100%;
+
+      left: 0;
+
+      top: 0;
+
+      display: flex;
+
+      transition: 1s;
+
+  }
+
+  .slider .list img{
+
+      width: 1300px;
+
+      max-width: 100vw;
+
+      height: 100%;
+
+      object-fit: cover;
+
+  }
+
+  .slider .buttons{
+
+      position: absolute;
+
+      top: 45%;
+
+      left: 5%;
+
+      width: 90%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+  }
+
+  .slider .buttons button{
+
+      width: 50px;
+
+      height: 50px;
+
+      border-radius: 50%;
+
+      background-color: #fff5;
+
+      color: #fff;
+
+      border: none;
+
+      font-family: monospace;
+
+      font-weight: bold;
+
+  }
+
+  .slider .dots{
+
+      position: absolute;
+
+      bottom: 10px;
+
+      left: 0;
+
+      color: #fff;
+
+      width: 100%;
+
+      margin: 0;
+
+      padding: 0;
+
+      display: flex;
+
+      justify-content: center;
+
+  }
+
+  .slider .dots li{
+
+      list-style: none;
+
+      width: 10px;
+
+      height: 10px;
+
+      background-color: #fff;
+
+      margin: 10px;
+
+      border-radius: 20px;
+
+      transition: 0.5s;
+
+  }
+
+  .slider .dots li.active{
+
+      width: 30px;
+
+  }
+
+  @media screen and (max-width: 768px){
+
+      .slider{
+
+          height: 400px;
+
+      }
+
+  }
+
+/* Text Moving */
+
+.moving-text{
+
+  
+
+  white-space: nowrap;
+
+  overflow-x: hidden;
+
+  position: relative;
+
+  
+
+}
+
+.main-text{
+
+     
+
+      display: inline-block;
+
+      padding: 30px 0;
+
+      border: #ff004f;
+
+      height: fit-content;
+
+      background-color: black;
+
+  }
+
+  @keyframes roll {
+
+      from{
+
+          transform: translate(0%);
+
+          
+
+      }
+
+      to{
+
+          transform: translate(-100%);
+
+      }
+
+      
+
+  }
+
+  .text{
+
+      display: inline-block;
+
+      animation: roll 5s infinite linear;
+
+      font-family: 'IBM Plex SemiBold Italic';
+
+      font-size: 3rem;
+
+      margin-left: 150px;
+
+      margin-bottom: 70px;
+
+  
+
+     }
+
+
+
+  /* Section */
+
+
+
+.section{
+
+
+
+  height: fit-content;
+
+  background-color: black;
+
+  padding-bottom: 50px;
+
+ 
+
+
+
+}
+
+section{
+
+  background-color: black;
+
+}
+
+.heading{
+
+  
+
+margin-left: 48px;
+
+  font-family: 'IBM Plex SemiBold Italic';
+
+  font-size: 3rem;
+
+
+
+}
+
+
+
+.itembox{
+
+  margin-top: 30px;
+
+margin-left: 46px;
+
+
+
+}
+
+
+
+.item1{
+
+border-radius: 10px;
+
+display: inline-block;
+
+ position: relative;
+
+ width: 	 373px;
+
+ height: 373px;
+
+ margin: 10px;
+
+ 
+
+}
+
+.item1:hover{
+
+  box-shadow: 2px 2px 2px rgb(83, 81, 81);
+
+}
+
+.image img{
+
+width: 100%;
+
+border: 20px;
+
+border-radius: 5%;
+
+}
+
+
+
+.bttn{
+
+ visibility: hidden;
+
+  position: absolute;
+
+  bottom: 20%;
+
+  left: 40%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+}
+
+
+
+.bttn button{
+
+  width: 50px;
+
+  height: 50px;
+
+  border-radius: 50%;
+
+  background-color: #fff5;
+
+  color: #fff;
+
+  border: none;
+
+  font-family: monospace;
+
+  font-weight: bold;
+
+  
+
+ 
+
+}
+
+
+
+
+
+.name{
+
+text-align: center;
+
+font-family: 'IBM Plex SemiBold Italic';
+
+font-size: xx-large;
+
+position: absolute;
+
+bottom: 10%;
+
+transform: translate(-70% -30%);
+
+ margin-left: 80px;
+
+}
+
+
+
+
+
+
+
+
+
+/* ------Horizontal------ */
+
+.heading2{
+
+  
+
+  margin-left: 48px;
+
+    font-family: 'IBM Plex SemiBold Italic';
+
+    font-size: 3rem;
+
+    padding-bottom: 20px;
+
+
+
+}
+
+.product-list{
+
+  margin-top: 30px;
+
+  margin-left: 46px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+
+
+  display: flex;
+
+  overflow-x: auto; 
+
+ 
+
+  padding-block: 30px;
+
+
+
+}
+
+.product-card{
+
+  height: 410px;
+
+  width: 290px;
+
+  margin: 10px;
+
+  display: inline-block;
+
+  }
+
+.card img{
+
+  border-radius: 15px;
+
+}
+
+
+
+.card a{
+
+  color: #fff;
+
+  text-decoration: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+
+
+.card a span{
+
+  color: rgb(255, 196, 0);
+
+}
+
+.rating,.price{
+
+  padding-left: 10px;
+
+}
+
+.price{
+
+  color:rgb(255, 0, 0);
+
+  font-weight: 700;
+
+
+
+}
+
+.description{
+
+  color: white;
+
+  font-weight: 700;
+
+  padding-left:10px ;
+
+  height: auto;
+
+  
+
+}
+
+
+
+
+
+::-webkit-scrollbar{
+
+  width: 1px;
+
+}
+
+::-webkit-scrollbar-track{
+
+  background-color: rgb(0, 0, 0);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+ background-color: rgb(255, 255, 255);
+
+ border-radius: 45px;
+
+ background-clip: content-box;
+
+ border: 2px solid transparent;
+
+}
+
+::-webkit-scrollbar:horizontal{
+
+  height: 8px;
+
+}
